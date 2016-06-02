@@ -92,10 +92,10 @@ Logged as <a href="#" >${sessionScope.user}</a>
 
 				<div class="content">
 					<input name="username" type="text" class="input username"
-						placeholder="Username" />
+						placeholder="Username" required/>
 					<div class="user-icon"></div>
 					<input name="password" type="password" class="input password"
-						placeholder="Password" />
+						placeholder="Password" required/>
 					<div class="pass-icon"></div>
 				</div>
 
@@ -107,7 +107,12 @@ Logged as <a href="#" >${sessionScope.user}</a>
 			</form>
 
 		</div>
-		<c:out value="${sessionScope.errorMessage}" /> 
+		<c:if test="${not empty sessionScope.errorMessage}">
+    <script>
+         alert("${errorMessage}");
+    </script>
+</c:if>
+			
 
 		
 		<div class="gradient"></div>

@@ -81,11 +81,11 @@ Logged as <a href="#" >${sessionScope.user}</a>
 		</div>
 	
 		<div class="content">
-		<input name="username" type="text" class="input username" placeholder="Username" />
+		<input name="username" type="text" class="input username" placeholder="Username" required />
 		<div class="user-icon"></div><br><br>
-		<input name="email" type="text" class="input username" placeholder="Email" />
+		<input name="email" type="text" class="input username" placeholder="Email" required/>
 		<div class="user-icon"></div>
-		<input name="password" type="password" class="input password" placeholder="Password" />
+		<input name="password" type="password" class="input password" placeholder="Password" required/>
 		<div class="pass-icon"></div>		
 		</div>
 

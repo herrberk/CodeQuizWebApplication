@@ -63,9 +63,10 @@ public class LoginController extends HttpServlet {
 			 
 		 }
 		 else
-		 {   request.setAttribute("errorMessage","invalid");
-			 RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/jsps/login.jsp");
-			 rd.forward(request, response);
+		 {  HttpSession session=request.getSession();
+	     session.setAttribute("errorMessage","Error! Invalid Username or Password..");
+		 RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/jsps/login.jsp");
+		 rd.forward(request, response);
 		 }
 		}catch(SQLException sqe){System.out.println("Error : While Fetching records from database");}
 		try
