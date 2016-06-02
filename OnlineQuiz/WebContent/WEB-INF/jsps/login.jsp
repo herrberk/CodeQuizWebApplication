@@ -15,6 +15,7 @@ body {
 	background:
 		url("${pageContext.request.contextPath}/images/background.jpg");
 }
+
 .user-icon {
 	top: 153px;
 	/* Positioning fix for slide-in, got lazy to think up of simpler method. */
@@ -32,45 +33,53 @@ body {
 </style>
 </head>
 <body>
-	<div class='logo'><a href='${pageContext.request.contextPath}'><img height=90% width=90% src="${pageContext.request.contextPath}/images/logo.png"/></a></div>
-<div id='navbar'>
-<ul>
-   <li><a href='${pageContext.request.contextPath}'><span>Home</span></a></li>
-   <li class='active'><a href='${pageContext.request.contextPath}/login'><span>Login</span></a></li>
-   <li><a href='${pageContext.request.contextPath}/register'><span>Register</span></a></li>
-   <li class='#'><a href='#'><span>Submit a Question</span></a></li>
-    <li class=''><a href='#'><span>Feedback</span></a></li>
-   <li><a href='#'><span>Contribute</span></a></li>
-   <li><a href='#'><span>Contact us</span></a></li>
-</ul>
-</div>
+	<div class='logo'>
+		<a href='${pageContext.request.contextPath}'><img height=90%
+			width=90% src="${pageContext.request.contextPath}/images/logo.png" /></a>
+	</div>
+	<div id='navbar'>
+		<ul>
+			<li><a href='${pageContext.request.contextPath}'><span>Home</span></a></li>
+			<li class='active'><a
+				href='${pageContext.request.contextPath}/login'><span>Login</span></a></li>
+			<li><a href='${pageContext.request.contextPath}/register'><span>Register</span></a></li>
+			<li class='#'><a href='#'><span>Submit a Question</span></a></li>
+			<li class=''><a href='#'><span>Feedback</span></a></li>
+			<li><a href='#'><span>Contribute</span></a></li>
+			<li><a href='#'><span>Contact us</span></a></li>
+		</ul>
+	</div>
 
-<!--  If user is logged in hide the register panel-->
-<c:if test='${not empty sessionScope.user}'>
+	<!--  If user is logged in hide the register panel-->
+	<c:if test='${not empty sessionScope.user}'>
 
-<div class= "button username" style="position:absolute;top:7%;left:75%">
-Logged as <a href="#" >${sessionScope.user}</a>
-</div>
-
-<div class ="button username" style="position:absolute;top:7%;left:90%">
-<a href='${pageContext.request.contextPath}/logout'>Logout</a>
-</div>
-
-<div id="wrapper">
-
-	<form name="login-form" class="login-form">
-		<div class="header" style="height:60px;">		
-		<img style="float: left;" height="30" width="30" src="${pageContext.request.contextPath}/images/warn.png"/>
-		<h1 style="float: right;">You're already logged in, ${sessionScope.user} ! </h1> 
+		<div class="button username"
+			style="position: absolute; top: 7%; left: 75%">
+			Logged as <a href="#">${sessionScope.user}</a>
 		</div>
-		
-	</form>
 
-</div>
+		<div class="button username"
+			style="position: absolute; top: 7%; left: 90%">
+			<a href='${pageContext.request.contextPath}/logout'>Logout</a>
+		</div>
 
-</c:if>
+		<div id="wrapper">
 
-<!--  If user is not logged in -->
+			<form name="login-form" class="login-form">
+				<div class="header" style="height: 60px;">
+					<img style="float: left;" height="30" width="30"
+						src="${pageContext.request.contextPath}/images/warn.png" />
+					<h1 style="float: right;">You're already logged in,
+						${sessionScope.user} !</h1>
+				</div>
+
+			</form>
+
+		</div>
+
+	</c:if>
+
+	<!--  If user is not logged in -->
 
 	<c:if test='${empty sessionScope.user}'>
 
@@ -92,10 +101,10 @@ Logged as <a href="#" >${sessionScope.user}</a>
 
 				<div class="content">
 					<input name="username" type="text" class="input username"
-						placeholder="Username" required/>
+						placeholder="Username" required />
 					<div class="user-icon"></div>
 					<input name="password" type="password" class="input password"
-						placeholder="Password" required/>
+						placeholder="Password" required />
 					<div class="pass-icon"></div>
 				</div>
 
@@ -108,13 +117,13 @@ Logged as <a href="#" >${sessionScope.user}</a>
 
 		</div>
 		<c:if test="${not empty sessionScope.errorMessage}">
-    <script>
-         alert("${errorMessage}");
-    </script>
-</c:if>
-			
+			<script>
+				alert("${errorMessage}");
+			</script>
+		</c:if>
 
-		
+
+
 		<div class="gradient"></div>
 	</c:if>
 
