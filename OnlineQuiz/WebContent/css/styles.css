@@ -1,47 +1,43 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
 
-.logo{
-	margin-top:0px;
-	margin-left:0px;
-	height:149px;
-	width:300px;
+.logo {
+	margin-top: 0px;
+	margin-left: 0px;
+	height: 149px;
+	width: 300px;
 }
 
-.logo:hover{
-	opacity:0.6;
+.logo:hover {
+	opacity: 0.6;
 }
+
 #navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: black;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: black;
 }
 
 #navbar li {
-    float: left;
-    
+	float: left;
 }
 
 #navbar li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-     font-weight: bold;
-     
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-weight: bold;
 }
 
 #navbar a:hover {
-    background-color: white;
-    color:black;
-     font-weight: bold;
-     
+	background-color: white;
+	color: black;
+	font-weight: bold;
 }
 
-
 #navbar .active {
-background-color:red;
-
+	background-color: red;
 }

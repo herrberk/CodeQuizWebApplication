@@ -26,28 +26,28 @@ Current Question ${sessionScope.quest.questionNumber+1} / 10
 </div>
 
 
- <div style="position:absolute;width:1000px;padding:25px;
+ <div style="position:absolute;width:800px;padding:25px;
   height: 200px;border: 1px solid green ;left:100px;top:60px">
-<span>${sessionScope.quest.question}</span><br/><br/>
+<span style="font-weight:bold;">${sessionScope.quest.question}</span><br/><br/>
 <form action="exam" method="post" >
  <c:forEach var="choice" items="${sessionScope.quest.questionOptions}" varStatus="counter">
- <input type="radio" name="answer" value="${counter.count}" >${choice}  <br/>
+ <input type="radio" name="answer" value="${counter.count}" > ${choice}  <br/>
  </c:forEach> <br/> 
  
  <%
    if(currentQuestion > 0)
    {
  %>
- <input type="submit" name="action" value="Previous" />
+ <input class="button quizbutton"  type="submit" name="action" value="Previous" />
  <%} %>
  
  <%
    if(currentQuestion < 9)
    {
  %>
- <input type="submit" name="action" value="Next" />
+ <input class="button quizbutton" type="submit" name="action" value="Next" />
  <%} %>
- <input type="submit" name="action" value="Finish Exam" />
+ <input class="button finish"  type="submit" name="action" value="Finish Exam" />
 
  </form>
 </div>

@@ -11,6 +11,15 @@ import org.xml.sax.SAXException;
 
 public class CreateDOM {
 
+	/**
+	 * Gets the xml file(the test) from the server, parses it and returns the DOM
+	 * @param test
+	 * @return dom of type Document
+	 * @throws SAXException
+	 * @throws ParserConfigurationException
+	 * @throws IOException
+	 * @throws URISyntaxException
+	 */
 	public static Document getDOM(String test)
 			throws SAXException, ParserConfigurationException, IOException, URISyntaxException {
 		Document dom = null;

@@ -43,25 +43,24 @@ body {
 			<li class='active'><a
 				href='${pageContext.request.contextPath}/login'><span>Login</span></a></li>
 			<li><a href='${pageContext.request.contextPath}/register'><span>Register</span></a></li>
-			<li class='#'><a href='#'><span>Submit a Question</span></a></li>
-			<li class=''><a href='#'><span>Feedback</span></a></li>
-			<li><a href='#'><span>Contribute</span></a></li>
-			<li><a href='#'><span>Contact us</span></a></li>
+			<li><a href='${pageContext.request.contextPath}/userPanel'><span>My
+						Results</span></a></li>
+			<li><a href='mailto:berksoysal@gmail.com'><span>Feedback</span></a></li>
+			<li><a href='https://ca.linkedin.com/in/berksoysal'
+				target="_blank"><span>Contact us</span></a></li>
 		</ul>
 	</div>
 
 	<!--  If user is logged in hide the register panel-->
 	<c:if test='${not empty sessionScope.user}'>
 
-		<div class="button username"
-			style="position: absolute; top: 7%; left: 75%">
-			Logged as <a href="#">${sessionScope.user}</a>
-		</div>
+		<a href='${pageContext.request.contextPath}/userPanel'>
+			<div class="button nameuser">Logged as, ${sessionScope.user}</div>
+		</a>
 
-		<div class="button username"
-			style="position: absolute; top: 7%; left: 90%">
-			<a href='${pageContext.request.contextPath}/logout'>Logout</a>
-		</div>
+		<a href='${pageContext.request.contextPath}/logout'>
+			<div class="button logout">Logout</div>
+		</a>
 
 		<div id="wrapper">
 
@@ -83,11 +82,10 @@ body {
 
 	<c:if test='${empty sessionScope.user}'>
 
-		<div style="position: relative; left: 32%; top: 30px">
-			<a class='button username'
-				href='${pageContext.request.contextPath}/register'>If you don`t
-				have an account, please click here to register</a>
-		</div>
+		<a href='${pageContext.request.contextPath}/register'><div
+				class="button nameuser"
+				style="width: 500px; position: relative; left: 30%; top: 30px">
+				If you don`t have an account, please click here to register</div></a>
 
 		<div id="wrapper">
 

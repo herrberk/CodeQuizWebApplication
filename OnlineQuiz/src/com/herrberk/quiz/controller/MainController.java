@@ -56,6 +56,12 @@ public class MainController extends HttpServlet {
 					.getRequestDispatcher("/WEB-INF/jsps/home.jsp");
 			dispatcher.forward(request, response);
 		}
+		else if (request.getRequestURI().equals(
+				applicationContextPath + "/userPanel")) {
+			RequestDispatcher dispatcher = request
+					.getRequestDispatcher("/WEB-INF/jsps/userPanel.jsp");
+			dispatcher.forward(request, response);
+		} 
 
 	}
 

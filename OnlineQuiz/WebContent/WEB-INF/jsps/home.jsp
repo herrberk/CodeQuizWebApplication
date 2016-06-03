@@ -29,25 +29,23 @@ body {
 			<li class='active'><a href='${pageContext.request.contextPath}'><span>Home</span></a></li>
 			<li><a href='${pageContext.request.contextPath}/login'><span>Login</span></a></li>
 			<li><a href='${pageContext.request.contextPath}/register'><span>Register</span></a></li>
-			<li class='#'><a href='#'><span>Submit a Question</span></a></li>
-			<li class=''><a href='#'><span>Feedback</span></a></li>
-			<li><a href='#'><span>Contribute</span></a></li>
-			<li><a href='#'><span>Contact us</span></a></li>
+			<li><a href='${pageContext.request.contextPath}/userPanel'><span>My
+						Results</span></a></li>
+			<li><a href='mailto:berksoysal@gmail.com'><span>Feedback</span></a></li>
+			<li><a href='https://ca.linkedin.com/in/berksoysal'
+				target="_blank"><span>Contact us</span></a></li>
 		</ul>
 	</div>
 
 	<c:if test='${not empty sessionScope.user}'>
 
-		<div class="button username"
-			style="position: absolute; top: 7%; left: 75%">
-			Logged as <a href="#">${sessionScope.user}</a>
-		</div>
+		<a href='${pageContext.request.contextPath}/userPanel'>
+			<div class="button nameuser">Logged as, ${sessionScope.user}</div>
+		</a>
 
-		<div class="button username"
-			style="position: absolute; top: 7%; left: 90%">
-			<a href='${pageContext.request.contextPath}/logout'>Logout</a>
-		</div>
-
+		<a href='${pageContext.request.contextPath}/logout'>
+			<div class="button logout">Logout</div>
+		</a>
 	</c:if>
 
 	<div style="position: absolute; left: 5%; top: 35%;">

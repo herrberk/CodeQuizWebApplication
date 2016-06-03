@@ -20,32 +20,37 @@ body {
 	Knowledge!</title>
 </head>
 <body>
-<div class='logo'><a href='${pageContext.request.contextPath}'><img height=90% width=90% src="${pageContext.request.contextPath}/images/logo.png"/></a></div>
-<div id='navbar'>
-<ul>
-   <li><a href='${pageContext.request.contextPath}'><span>Home</span></a></li>
-   <li><a href='${pageContext.request.contextPath}/login'><span>Login</span></a></li>
-   <li class='active'><a href='${pageContext.request.contextPath}/register'><span>Register</span></a></li>
-   <li class='#'><a href='#'><span>Submit a Question</span></a></li>
-    <li class=''><a href='#'><span>Feedback</span></a></li>
-   <li><a href='#'><span>Contribute</span></a></li>
-   <li><a href='#'><span>Contact us</span></a></li>
-</ul>
-</div>
+	<div class='logo'>
+		<a href='${pageContext.request.contextPath}'><img height=90%
+			width=90% src="${pageContext.request.contextPath}/images/logo.png" /></a>
+	</div>
+	<div id='navbar'>
+		<ul>
+			<li><a href='${pageContext.request.contextPath}'><span>Home</span></a></li>
+			<li><a href='${pageContext.request.contextPath}/login'><span>Login</span></a></li>
+			<li class='active'><a
+				href='${pageContext.request.contextPath}/register'><span>Register</span></a></li>
+			<li><a href='${pageContext.request.contextPath}/userPanel'><span>My
+						Results</span></a></li>
+			<li><a href='mailto:berksoysal@gmail.com'><span>Feedback</span></a></li>
+			<li><a href='https://ca.linkedin.com/in/berksoysal'
+				target="_blank"><span>Contact us</span></a></li>
+		</ul>
+	</div>
 
 
-<div id="wrapper">
+	<div id="wrapper">
 
-	<form name="login-form" class="login-form">
-		<div class="header" style="height:60px;">		
-		<img style="float: left;" height="30" width="30" src="${pageContext.request.contextPath}/images/warn.png"/>
-		<h1 style="float: right;">Error: Entered username is in use..</h1> 
-		</div>
-		<div class="footer" style="height:20px;">	
-		</div>
-	</form>
+		<form name="login-form" class="login-form">
+			<div class="header" style="height: 60px;">
+				<img style="float: left;" height="30" width="30"
+					src="${pageContext.request.contextPath}/images/warn.png" />
+				<h1 style="float: right;">Error: Entered username is in use..</h1>
+			</div>
+			<div class="footer" style="height: 20px;"></div>
+		</form>
 
-</div>
+	</div>
 
 
 </body>

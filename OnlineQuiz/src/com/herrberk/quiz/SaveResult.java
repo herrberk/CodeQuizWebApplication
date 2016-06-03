@@ -17,7 +17,7 @@ public class SaveResult {
 		{
 			Statement st=con.createStatement();
 			String sql="UPDATE users SET " +selectedExam+ " = " + result + " WHERE username = '"+user+"'";
-			System.out.println(sql);
+			//System.out.println(sql);
 			st.executeUpdate(sql);
 		}catch(SQLException sqe){System.out.println("Error : While Inserting record in database");}
 	
