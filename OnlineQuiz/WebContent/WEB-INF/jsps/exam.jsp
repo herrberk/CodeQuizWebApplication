@@ -17,12 +17,12 @@ body {
 
 </head><br/>
 <body>
-<div style="position:absolute;left:50px;top:20px">
+<div style="font-weight:bold;position:absolute;left:50px;top:20px">
 <%
   int currentQuestion=((Exam)request.getSession().getAttribute("currentExam")).getCurrentQuestion();
  // System.out.println("Question Number "+currentQuestion+ " retrieved ");
  %>
-Current Question ${sessionScope.quest.questionNumber+1} / 10
+Current Question ${sessionScope.quest.questionNumber+1} / ${NOQ}
 </div>
 
 
@@ -42,14 +42,16 @@ Current Question ${sessionScope.quest.questionNumber+1} / 10
  <%} %>
  
  <%
-   if(currentQuestion < 9)
+   if(currentQuestion < (Exam.numberOfQuestions-1))
    {
  %>
  <input class="button quizbutton" type="submit" name="action" value="Next" />
  <%} %>
- <input class="button finish"  type="submit" name="action" value="Finish Exam" />
-
- </form>
+ <input class="button finish"  type="submit" name="action" value="Save and Finish Exam" />
+	<a href='${pageContext.request.contextPath}'>
+			<div class="button cancelandreturn">Cancel and Return to HomePage, ${sessionScope.user}</div>
+		</a>
+</form>
 </div>
 
 

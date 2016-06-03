@@ -19,15 +19,23 @@ body {
 }
 
 .user-icon {
-	top: 153px;
+	top: 110px;
 	/* Positioning fix for slide-in, got lazy to think up of simpler method. */
 	background: rgba(65, 72, 72, 0.75)
 		url('${pageContext.request.contextPath}/images/user-icon.png')
 		no-repeat center;
 }
 
+.mail-icon {
+	top: 183px;
+	/* Positioning fix for slide-in, got lazy to think up of simpler method. */
+	background: rgba(65, 72, 72, 0.75)
+		url('${pageContext.request.contextPath}/images/mail-icon.png')
+		no-repeat center;
+}
+
 .pass-icon {
-	top: 201px;
+	top: 232px;
 	background: rgba(65, 72, 72, 0.75)
 		url('${pageContext.request.contextPath}/images/pass-icon.png')
 		no-repeat center;
@@ -103,7 +111,7 @@ body {
 					<br> <input name="email" type="email" class="input username"
 						placeholder="Email" required
 						pattern="^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$" />
-					<div class="user-icon"></div>
+					<div class="mail-icon"></div>
 					<input name="password" type="password" class="input password"
 						placeholder="Password" required />
 					<div class="pass-icon"></div>

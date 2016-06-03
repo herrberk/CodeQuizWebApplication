@@ -68,107 +68,107 @@ body {
 
 				<td>
 				<tr>
-					<c:if test="${java < 5}">
+					<c:if test="${java < 50}">
 						<div style="color: red;">
 					</c:if>
-					<c:if test="${java >= 5}">
+					<c:if test="${java >= 50}">
 						<div style="color: green;">
 					</c:if>
-					<c:out value="Java: ${java}" />
+					<c:out value="Java: %${java}" />
 				</tr>
-				</td>/10
+				</td>
 			</div>
 
 			<td>
 			<tr>
-				<c:if test="${javascript < 5}">
+				<c:if test="${javascript < 50}">
 					<div style="color: red;">
 				</c:if>
-				<c:if test="${javascript >= 5}">
+				<c:if test="${javascript >= 50}">
 					<div style="color: green;">
 				</c:if>
-				<c:out value="JavaScript: ${javascript}" />
+				<c:out value="JavaScript: %${javascript}" />
 			</tr>
-			</td>/10
+			</td>
 		</div>
 
 		<td>
 		<tr>
-			<c:if test="${sequel < 5}">
+			<c:if test="${sequel < 50}">
 				<div style="color: red;">
 			</c:if>
-			<c:if test="${sequel >= 5}">
+			<c:if test="${sequel >= 50}">
 				<div style="color: green;">
 			</c:if>
-			<c:out value="SQL: ${sequel}" />
+			<c:out value="SQL: %${sequel}" />
 		</tr>
-		</td>/10
+		</td>
 		</div>
 
 		<td>
 		<tr>
-			<c:if test="${python < 5}">
+			<c:if test="${python < 50}">
 				<div style="color: red;">
 			</c:if>
-			<c:if test="${python >= 5}">
+			<c:if test="${python >= 50}">
 				<div style="color: green;">
 			</c:if>
-			<c:out value="Python: ${python}" />
+			<c:out value="Python: %${python}" />
 		</tr>
-		</td>/10
+		</td>
 		</div>
 
 		<td>
 		<tr>
-			<c:if test="${css < 5}">
+			<c:if test="${css < 50}">
 				<div style="color: red;">
 			</c:if>
-			<c:if test="${css >= 5}">
+			<c:if test="${css >= 50}">
 				<div style="color: green;">
 			</c:if>
-			<c:out value="CSS: ${css}" />
+			<c:out value="CSS: %${css}" />
 		</tr>
-		</td>/10
+		</td>
 		</div>
 
 		<td>
 		<tr>
-			<c:if test="${php < 5}">
+			<c:if test="${php < 50}">
 				<div style="color: red;">
 			</c:if>
-			<c:if test="${php >= 5}">
+			<c:if test="${php >= 50}">
 				<div style="color: green;">
 			</c:if>
-			<c:out value="PHP: ${php}" />
+			<c:out value="PHP: %${php}" />
 		</tr>
-		</td>/10
+		</td>
 		</div>
 
 		<td>
 		<tr>
-			<c:if test="${c < 5}">
+			<c:if test="${c < 50}">
 				<div style="color: red;">
 			</c:if>
-			<c:if test="${c >= 5}">
+			<c:if test="${c >= 50}">
 				<div style="color: green;">
 			</c:if>
-			<c:out value="C: ${c}" />
+			<c:out value="C: %${c}" />
 		</tr>
-		</td>/10
+		</td>
 		</div>
 
 
 		<td>
 		<tr>
-			<c:if test="${ruby < 5}">
+			<c:if test="${ruby < 50}">
 				<div style="color: red;">
 			</c:if>
-			<c:if test="${ruby >= 5}">
+			<c:if test="${ruby >= 50}">
 				<div style="color: green;">
 			</c:if>
-			<c:out value="Ruby: ${ruby}" />
+			<c:out value="Ruby: %${ruby}" />
 		</tr>
-		</td>/10
+		</td>
 		</div>
 
 		</div>

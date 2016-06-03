@@ -17,8 +17,9 @@ public class Exam {
 	Document dom;
 	public int currentQuestion = 0;
 
+	public static Integer numberOfQuestions=10;
 	public Map<Integer, Integer> selections = new LinkedHashMap<Integer, Integer>();
-	public ArrayList<QuizQuestion> questionList = new ArrayList<QuizQuestion>(10);
+	public ArrayList<QuizQuestion> questionList = new ArrayList<QuizQuestion>(numberOfQuestions);
 
 	public Exam(String test) throws SAXException, ParserConfigurationException, IOException, URISyntaxException {
 		dom = CreateDOM.getDOM(test);
@@ -87,6 +88,7 @@ public class Exam {
 		for (QuizQuestion question : questionList) {
 			correctAnswersList.add(question.getCorrectOptionIndex());
 		}
+		
 
 		for (int i = 0; i < selections.size(); i++) {
 			//System.out.println(userSelectionsList.get(i) + " --- " + correctAnswersList.get(i));

@@ -29,7 +29,10 @@ public class ExamController extends HttpServlet {
 			throws ServletException, IOException {
 
 		boolean finish = false;
-
+		int NOQ=Exam.numberOfQuestions;
+		
+		request.setAttribute("NOQ",NOQ);
+		
 		HttpSession session = request.getSession();
 		try {
 			if (session.getAttribute("currentExam") == null) {
@@ -90,7 +93,7 @@ public class ExamController extends HttpServlet {
 			exam.setQuestion(exam.currentQuestion);
 			QuizQuestion q = exam.questionList.get(exam.currentQuestion);
 			session.setAttribute("quest", q);
-		} else if ("Finish Exam".equals(action)) {
+		} else if ("Save and Finish Exam".equals(action)) {
 			finish = true;
 			int result = exam.calculateResult(exam);
 			request.setAttribute("result", result);

@@ -17,7 +17,7 @@ body {
 }
 
 .user-icon {
-	top: 153px;
+	top: 110px;
 	/* Positioning fix for slide-in, got lazy to think up of simpler method. */
 	background: rgba(65, 72, 72, 0.75)
 		url('${pageContext.request.contextPath}/images/user-icon.png')
@@ -25,7 +25,7 @@ body {
 }
 
 .pass-icon {
-	top: 201px;
+	top: 163px;
 	background: rgba(65, 72, 72, 0.75)
 		url('${pageContext.request.contextPath}/images/pass-icon.png')
 		no-repeat center;
