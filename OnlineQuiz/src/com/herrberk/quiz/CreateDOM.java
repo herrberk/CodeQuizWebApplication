@@ -26,6 +26,7 @@ public class CreateDOM {
 
 		// Download the Online XML file for each quiz
 		String quizFile = "http://berksoysal.vacau.com/" + test + "-quiz-1.xml";
+		//String quizFile = "file:///C:/Users/Berk/Desktop/Quizzes/" + test + "-quiz-1.xml";
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		DocumentBuilder db = dbf.newDocumentBuilder();
 		try {

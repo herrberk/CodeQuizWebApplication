@@ -30,6 +30,7 @@ public class Exam {
 		String options[] = new String[4];
 		String question = null;
 		int correct = 0;
+		String image=null;
 		//System.out.println("Dom " + dom);
 		NodeList qList = dom.getElementsByTagName("question");
 		NodeList childList = qList.item(i).getChildNodes();
@@ -45,21 +46,18 @@ public class Exam {
 				question = childList.item(j).getTextContent();
 			} else if ("correct".equals(childNode.getNodeName())) {
 				correct = Integer.parseInt(childList.item(j).getTextContent());
+			}else if ("image".equals(childNode.getNodeName())) {
+				image = childList.item(j).getTextContent();
 			}
 
 		}
-		//System.out.println("Retrieving Question Number " + number);
-		//System.out.println("Question is : " + question);
-	   //	for (String a : options) {
-	    //		System.out.println(a);
-		//}
-		//System.out.println("Correct answer index : " + correct);
 
 		QuizQuestion q = new QuizQuestion();
 		q.setQuestionNumber(number);
 		q.setQuestion(question);
 		q.setCorrectOptionIndex(correct);
 		q.setQuestionOptions(options);
+		q.setImage(image);
 		questionList.add(number, q);
 
 	}

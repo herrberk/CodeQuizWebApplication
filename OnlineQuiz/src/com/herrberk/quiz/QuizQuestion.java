@@ -6,13 +6,17 @@ public class QuizQuestion {
 	String question;
 	String questionOptions[];
 	int correctOptionIndex;
+	String image;
 	
 	
 	public String getQuestion()
 	{ 
 		return question;
 	}
-	
+	public String getImage()
+	{ 
+		return image;
+	}
 	public int getQuestionNumber()
 	{
 		return questionNumber;
@@ -22,7 +26,10 @@ public class QuizQuestion {
 	{
 		questionNumber=i;
 	}
-	
+	public void setImage(String im)
+	{
+		image=im;
+	}
 	public int getCorrectOptionIndex()
 	{
 		return correctOptionIndex;

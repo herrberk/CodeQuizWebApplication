@@ -27,8 +27,12 @@ Current Question ${sessionScope.quest.questionNumber+1} / ${NOQ}
 
 
  <div style="background-color:white;position:absolute;width:800px;padding:25px;
-  height: 200px;border: 1px solid green ;left:100px;top:60px">
+ border: 1px solid green ;left:100px;top:60px">
 <span style="font-weight:bold;">${sessionScope.quest.question}</span><br/><br/>
+
+<c:if test="${ not empty sessionScope.quest.image}">
+	<img src="${sessionScope.quest.image}"/>
+	</c:if>
 <form action="exam" method="post" >
  <c:forEach var="choice" items="${sessionScope.quest.questionOptions}" varStatus="counter">
  <input type="radio" name="answer" value="${counter.count}" > ${choice}  <br/>
@@ -49,7 +53,7 @@ Current Question ${sessionScope.quest.questionNumber+1} / ${NOQ}
  <%} %>
  <input class="button finish"  type="submit" name="action" value="Save and Finish Exam" />
 	<a href='${pageContext.request.contextPath}'>
-			<div class="button cancelandreturn">Cancel and Return to HomePage, ${sessionScope.user}</div>
+			<div class="button cancelandreturn">Cancel and Return</div>
 		</a>
 </form>
 </div>
