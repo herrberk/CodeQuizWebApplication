@@ -50,7 +50,7 @@ body {
 	<br>
 	<br>
 	<br>
-	<div class="login-form">
+	<div class="login-form" style="bottom:20px;">
 		<h2 style="position: relative; left: 20%; top: 20px">Instruction
 			for ${sessionScope.exam} Quiz :</h2>
 

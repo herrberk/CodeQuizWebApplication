@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.herrberk.quiz.DatabaseConnectionFactory;
+import com.herrberk.quiz.SecurityMechanism;
 
 @WebServlet("/checkRegister")
 public class RegistrationController extends HttpServlet {
@@ -29,27 +30,32 @@ public class RegistrationController extends HttpServlet {
 		String username = request.getParameter("username");
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-
-		Connection con = DatabaseConnectionFactory.createConnection();
-		boolean error = false;
-
+		
+		//Create the DB if non-existent
+		DatabaseConnectionFactory.createDB();
+		
 		// Create the table in the database if non-existent
 		DatabaseConnectionFactory.createTable();
+		
+		Connection con = DatabaseConnectionFactory.createConnection();
+		boolean error = false;
 
 		// Check if the username exists in the database
 		boolean exists = DatabaseConnectionFactory.checkUsername(username);
 
 		try {
 			Statement st = con.createStatement();
-			String sql = "INSERT INTO users values ('" + username + "','" + password + "','" + email + "'"
+			SecurityMechanism sm = new SecurityMechanism();
+			String sql = "INSERT INTO users values ('" + username + "','" + sm.getEncrypted(password) + "','" + email + "'"
 					+ ",0,0,0,0,0,0,0,0)";
-			System.out.println(sql);
 			st.execute(sql);
+			
 			error = false;
 		} catch (SQLException sqe) {
-			System.out.println("Error : While Inserting record into the database");
+			System.out.println("Duplicate Key Error : While Inserting record into the database");
+			sqe.printStackTrace();
 			error = true;
-			System.out.println(sqe);
+			
 		}
 		try {
 			con.close();

@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.herrberk.quiz.DatabaseConnectionFactory;
+import com.herrberk.quiz.SecurityMechanism;
 
 @WebServlet("/checkLogin")
 public class LoginController extends HttpServlet {
@@ -29,31 +30,39 @@ public class LoginController extends HttpServlet {
 
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		Connection con = DatabaseConnectionFactory.createConnection();
-		ResultSet set = null;
-		int i = 0;
+
+		// Create the DB if non-existent
+		DatabaseConnectionFactory.createDB();
 
 		// Create the table in the database if non-existent
 		DatabaseConnectionFactory.createTable();
 
+		Connection con = DatabaseConnectionFactory.createConnection();
+		ResultSet set = null;
+		int i = 0;
+		HttpSession session = request.getSession();
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsps/login.jsp");
+		session.setAttribute("errorMessage", "Error! Invalid Username or Password..");
+		session.setAttribute("tryAgain", "Please Try Again..");
 		try {
 			Statement st = con.createStatement();
-			String sql = "Select * from  users where username='" + username + "' and password='" + password + "' ";
-			System.out.println(sql);
+			SecurityMechanism sm = new SecurityMechanism();
+			String sql = "SELECT * FROM users WHERE username='" +
+			username + "' and password='" + sm.getEncrypted(password) + "' ";
 			set = st.executeQuery(sql);
+			
 			while (set.next()) {
 				i = 1;
 			}
 			if (i != 0) {
-				HttpSession session = request.getSession();
 				session.setAttribute("user", username);
-				RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsps/home.jsp");
+				rd = request.getRequestDispatcher("/WEB-INF/jsps/home.jsp");
 				rd.forward(request, response);
 
 			} else {
-				HttpSession session = request.getSession();
-				session.setAttribute("errorMessage", "Error! Invalid Username or Password..");
-				RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsps/login.jsp");
+				rd = request.getRequestDispatcher("/WEB-INF/jsps/login.jsp");
+			    session.setAttribute("errorMessage", " ");
+			    session.setAttribute("tryAgain", " ");
 				rd.forward(request, response);
 			}
 		} catch (SQLException sqe) {

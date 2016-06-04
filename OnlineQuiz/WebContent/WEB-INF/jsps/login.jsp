@@ -94,6 +94,9 @@ body {
 
 				<div class="header">
 					<h1>Login</h1>
+					
+					<h3><c:out value="${sessionScope.errorMessage}"/></h3>
+					<h4><c:out value="${sessionScope.tryAgain}"/></h4>
 					<span></span>
 				</div>
 
@@ -114,11 +117,9 @@ body {
 			</form>
 
 		</div>
-		<c:if test="${not empty sessionScope.errorMessage}">
-			<script>
-				alert("${errorMessage}");
-			</script>
-		</c:if>
+		
+			
+
 
 
 
