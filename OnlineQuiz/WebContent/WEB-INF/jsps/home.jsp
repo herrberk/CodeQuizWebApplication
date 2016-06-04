@@ -29,8 +29,14 @@ body {
 			<li class='active'><a href='${pageContext.request.contextPath}'><span>Home</span></a></li>
 			<li><a href='${pageContext.request.contextPath}/login'><span>Login</span></a></li>
 			<li><a href='${pageContext.request.contextPath}/register'><span>Register</span></a></li>
-			<li><a href='${pageContext.request.contextPath}/userPanel'><span>My
-						Results</span></a></li>
+			<li><c:if test='${not empty sessionScope.user}'>
+					<a href='${pageContext.request.contextPath}/userPanel'>
+				</c:if> 
+				<c:if test='${empty sessionScope.user}'>
+					<a href='${pageContext.request.contextPath}'>
+				</c:if> 
+				
+				<span>My Results</span></a></li>
 			<li><a href='mailto:berksoysal@gmail.com'><span>Feedback</span></a></li>
 			<li><a href='https://ca.linkedin.com/in/berksoysal'
 				target="_blank"><span>Contact us</span></a></li>

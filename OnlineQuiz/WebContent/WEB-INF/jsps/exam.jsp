@@ -26,7 +26,7 @@ Current Question ${sessionScope.quest.questionNumber+1} / ${NOQ}
 </div>
 
 
- <div style="position:absolute;width:800px;padding:25px;
+ <div style="background-color:white;position:absolute;width:800px;padding:25px;
   height: 200px;border: 1px solid green ;left:100px;top:60px">
 <span style="font-weight:bold;">${sessionScope.quest.question}</span><br/><br/>
 <form action="exam" method="post" >
